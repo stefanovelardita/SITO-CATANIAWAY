@@ -569,7 +569,6 @@ color: red;
 }
 
 .pps .tpd p:first-of-type, .sps .tpd p:first-of-type, .tps .tpd p:first-of-type {
-  font-weight: 600;
   color: #ff6b35;
   font-size: 16px;
   margin-bottom: 15px;
@@ -578,7 +577,6 @@ color: red;
 
 
 .qps .tpd p:first-of-type, .cps .tpd p:first-of-type {
-  font-weight: 600;
   color: #333;
   font-size: 16px;
   margin-bottom: 15px;
