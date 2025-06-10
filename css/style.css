@@ -1843,7 +1843,7 @@ main p:first-of-type {
   
 
 }
-
+/* LAYOUT PRINCIPALE */
 .grecoromano-page .heroimg {
   position: relative;
   width: 100%;
@@ -1858,7 +1858,6 @@ main p:first-of-type {
   object-fit: cover;
   display: block;
 }
-
 
 .grecoromano-page .tpd {
   padding: 60px 15px;
@@ -1893,7 +1892,7 @@ main p:first-of-type {
   font-family: 'Work Sans', sans-serif;
 }
 
-
+/* LAYOUT MAPPA E ITINERARIO - DESKTOP */
 .grecoromano-page .map-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -1904,14 +1903,12 @@ main p:first-of-type {
   align-items: start;
 }
 
-
 .grecoromano-page .map-img {
   background: #fff;
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0 8px 30px rgba(0,0,0,0.1);
   transition: transform 0.3s ease;
-  order: 1; 
 }
 
 .grecoromano-page .map-img:hover {
@@ -1927,7 +1924,6 @@ main p:first-of-type {
   border-radius: 15px;
 }
 
-
 .grecoromano-page .map-info {
   background: linear-gradient(135deg, #0e3b71 0%, #1a4b8c 100%);
   color: white;
@@ -1936,9 +1932,7 @@ main p:first-of-type {
   box-shadow: 0 8px 30px rgba(14, 59, 113, 0.3);
   position: sticky;
   top: 120px;
-  order: 2; 
 }
-
 
 .grecoromano-page .map-info > p {
   display: flex;
@@ -1958,7 +1952,6 @@ main p:first-of-type {
   font-weight: 700;
 }
 
-
 .grecoromano-page .map-info h3 {
   font-size: 22px;
   margin: 25px 0 20px 0;
@@ -1969,7 +1962,6 @@ main p:first-of-type {
   padding-bottom: 12px;
   font-family: 'Work Sans', sans-serif;
 }
-
 
 .grecoromano-page .map-info ol {
   list-style: none;
@@ -2038,32 +2030,35 @@ main p:first-of-type {
   font-weight: 600;
 }
 
-
+/* TABLET - Layout verticale */
 @media (max-width: 1024px) {
-  .map-container {
-    grid-template-columns: 1fr;
+  .grecoromano-page .map-container {
+    display: flex !important;
+    flex-direction: column !important;
     gap: 30px;
     padding: 40px 15px;
   }
   
-  .map-info {
+  .grecoromano-page .map-img {
+    order: 1 !important; /* Mappa per prima */
+    width: 100%;
+  }
+  
+  .grecoromano-page .map-info {
+    order: 2 !important; /* Itinerario per secondo */
     position: static;
     padding: 30px 25px;
-    order: 2; 
+    width: 100%;
   }
   
-  .map-img {
-    order: 1; 
-  }
-  
-  .map-img iframe {
+  .grecoromano-page .map-img iframe {
     height: 400px;
   }
 }
 
-/* Responsive design per mobile */
+/* MOBILE - Layout ottimizzato */
 @media (max-width: 768px) {
-  .heroimg {
+  .grecoromano-page .heroimg {
     height: 300px;
   }
   
@@ -2084,50 +2079,51 @@ main p:first-of-type {
     text-align: left;
   }
   
-  .map-container {
+  .grecoromano-page .map-container {
     padding: 30px 15px;
     gap: 25px;
   }
   
-  .map-img iframe {
+  .grecoromano-page .map-img iframe {
     height: 350px;
   }
   
-  .map-info {
+  .grecoromano-page .map-info {
     padding: 25px 20px;
   }
   
-  .map-info > p {
+  .grecoromano-page .map-info > p {
     flex-direction: column;
     text-align: center;
     gap: 5px;
   }
   
-  .map-info h3 {
+  .grecoromano-page .map-info h3 {
     font-size: 20px;
     margin: 20px 0 15px 0;
   }
   
-  .map-info li {
+  .grecoromano-page .map-info li {
     padding-left: 45px;
     margin-bottom: 12px;
   }
   
-  .map-info li::before {
+  .grecoromano-page .map-info li::before {
     width: 30px;
     height: 30px;
     font-size: 12px;
   }
   
-  .map-info a {
+  .grecoromano-page .map-info a {
     font-size: 14px;
   }
   
-  .map-info li:hover {
+  .grecoromano-page .map-info li:hover {
     padding-left: 55px;
   }
 }
 
+/* MOBILE PICCOLO */
 @media (max-width: 480px) {
   .grecoromano-page .tpd h2 {
     font-size: 28px;
@@ -2137,21 +2133,21 @@ main p:first-of-type {
     font-size: 18px;
   }
   
-  .map-info {
+  .grecoromano-page .map-info {
     padding: 20px 15px;
   }
   
-  .map-info li {
+  .grecoromano-page .map-info li {
     padding-left: 40px;
   }
   
-  .map-info li::before {
+  .grecoromano-page .map-info li::before {
     width: 28px;
     height: 28px;
     font-size: 11px;
   }
   
-  .map-info > p {
+  .grecoromano-page .map-info > p {
     font-size: 14px;
     padding: 10px 15px;
   }
